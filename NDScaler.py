@@ -1,10 +1,11 @@
 from sklearn.base import TransformerMixin
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+import numpy as np
 
 
 class NDScaler(TransformerMixin):
     def __init__(self, **kwargs):
-        self._scaler = StandardScaler(copy=True, **kwargs)
+        self._scaler = MinMaxScaler(feature_range=(-1, 1), copy=True, **kwargs)
         self._orig_shape = None
 
     def fit(self, X, **kwargs):
