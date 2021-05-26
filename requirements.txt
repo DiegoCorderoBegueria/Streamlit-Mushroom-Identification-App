@@ -2,4 +2,4 @@ streamlit==0.81.1
 tensorflow==2.5.0
 tensorflow-hub==0.12.0
 matplotlib==3.4.2
-[-e] <https://raw.githubusercontent.com/DiegoCorderoBegueria/Streamlit-Mushroom-Identification-App/main/NDScaler.py>
+[-e] <https://github.com/DiegoCorderoBegueria/Streamlit-Mushroom-Identification-App/blob/main/NDScaler.py>
