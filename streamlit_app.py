@@ -9,7 +9,6 @@ import pandas as pd
 from NDScaler import NDScaler
 
 
-
 labels = pd.read_csv(
     'https://raw.githubusercontent.com/DiegoCorderoBegueria/Streamlit_MushroomCM/main/probability-labels-en.txt',
     delimiter="\t",
@@ -28,7 +27,6 @@ def preprocessing_img(image):
     test_image = img.resize((360, 360))
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
-
     scaler.fit(test_image)
     test_image = scaler.transform(test_image)
     test_image = [test_image]
