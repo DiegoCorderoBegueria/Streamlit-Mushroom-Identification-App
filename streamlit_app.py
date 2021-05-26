@@ -6,6 +6,8 @@ import tensorflow_hub as hub
 from tensorflow.keras import preprocessing
 import numpy as np
 import pandas as pd
+from NDScaler import NDScaler
+
 
 
 labels = pd.read_csv(
@@ -18,12 +20,17 @@ model = hub.load("https://tfhub.dev/bohemian-visual-recognition-alliance/models/
 st.header('Mushroom identification')
 file_uploaded = st.file_uploader("Choose File", type=["png", "jpg", "jpeg"])
 
+scaler = NDScaler()
+
 
 def preprocessing_img(image):
     img = Image.open(image)
     test_image = img.resize((360, 360))
     test_image = preprocessing.image.img_to_array(test_image)
     test_image = test_image / 255.0
+
+    scaler.fit(test_image)
+    test_image = scaler.transform(test_image)
     test_image = [test_image]
     return test_image
 
