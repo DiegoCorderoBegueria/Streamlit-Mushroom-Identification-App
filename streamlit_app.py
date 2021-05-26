@@ -6,7 +6,7 @@ import tensorflow_hub as hub
 from tensorflow.keras import preprocessing
 import numpy as np
 import pandas as pd
-from NDScaler import NDScaler
+from './NDScaler' import NDScaler
 
 
 labels = pd.read_csv(
