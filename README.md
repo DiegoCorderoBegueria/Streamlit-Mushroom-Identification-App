@@ -1,1 +1,2 @@
-# Streamlit_MushroomCM
+# Streamlit Mushroom Identification App
+
